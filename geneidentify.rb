@@ -66,5 +66,3 @@ def geneidentify(directory, filename)
 	file_out.close
 
 end
-
-geneidentify("C:/users/takao/documents/root studies/calcium/", "agi_sig")
