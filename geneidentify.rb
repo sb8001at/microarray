@@ -1,3 +1,8 @@
+require 'open-uri'
+
+@path = 'https://github.com/sb8001at/microarray/blob/master/gene_description_20140101.csv'
+fileName = File.basename(@path)
+
 def geneidentify(directory, filename)
 	# Use text file made with expected-pattern test, that only have probes.
 	input = directory + filename + ".txt"
@@ -17,7 +22,7 @@ def geneidentify(directory, filename)
 	file_in.close
 
 	# Gene description import
-	file1 = File.open("C:/Users/takao/Dropbox/gene_description_20140101.csv", "r")
+	file1 = open(@path, "r")
 	
 	# Initializing several hash and arrays.
 	gene_hash = Hash.new
@@ -66,3 +71,5 @@ def geneidentify(directory, filename)
 	file_out.close
 
 end
+
+geneidentify(ARGV[0], ARGV[1])
